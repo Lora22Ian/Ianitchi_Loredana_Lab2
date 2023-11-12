@@ -10,7 +10,9 @@ namespace Ianitchi_Loredana_Lab2.Models
 
         public string? LastName { get; set; }
 
-        [Display(Name = "Full Name")]
-        public string FullName => FirstName + " " + LastName;
+        public string FullName => $"{FirstName} {LastName}";
+
+        //[Display(Name = "Full Name")]
+        //public string FullName => FirstName + " " + LastName;
     }
 }
