@@ -21,5 +21,16 @@ namespace Ianitchi_Loredana_Lab2.Data
         public DbSet<Ianitchi_Loredana_Lab2.Models.Author>? Author { get; set; }
 
         public DbSet<Ianitchi_Loredana_Lab2.Models.Category>? Category { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Book>()
+                .HasOne(e => e.Borrowing)
+            .WithOne(e => e.Book)
+                .HasForeignKey<Borrowing>("BookID");
+        }
+        public DbSet<Ianitchi_Loredana_Lab2.Models.Borrowing>? Borrowing { get; set; }
+        public DbSet<Ianitchi_Loredana_Lab2.Models.Member>? Member { get; set; }
+
+       
     }
 }
