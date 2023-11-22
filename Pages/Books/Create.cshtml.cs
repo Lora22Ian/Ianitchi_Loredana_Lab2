@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Ianitchi_Loredana_Lab2.Data;
 using Ianitchi_Loredana_Lab2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ianitchi_Loredana_Lab2.Pages.Books
 {
+    [Authorize(Roles = "Admin")]
     public class CreateModel : BookCategoriesPageModel
     {
         private readonly Ianitchi_Loredana_Lab2.Data.Ianitchi_Loredana_Lab2Context _context;
